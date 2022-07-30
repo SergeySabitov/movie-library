@@ -26,7 +26,7 @@ const FilmsByRequest: React.FC<{title: string, search: {s: string, y: string} | 
             if (page === 1)
                 setIsLoading(true);
                 
-            const url = `http://www.omdbapi.com/?s=${s}&apikey=496ba178${year !== 'no' ? `&y=${year}`: ''}&page=${page}`;
+            const url = `https://www.omdbapi.com/?s=${s}&apikey=496ba178${year !== 'no' ? `&y=${year}`: ''}&page=${page}`;
             const fetchMovies = async(url: string) => {
                 try {
                     const response = await fetch(url);

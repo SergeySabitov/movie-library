@@ -40,7 +40,7 @@ const MovieDetails: React.FC<{movieId: string, backClick: () => void}> = props =
                 setError('failed to fetch movie details(')
             }
         }
-        const url = `http://www.omdbapi.com/?i=${props.movieId}&apikey=496ba178`;
+        const url = `https://www.omdbapi.com/?i=${props.movieId}&apikey=496ba178`;
         fetchMovieDetails(url);
     }, [])
 
