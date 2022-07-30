@@ -1,0 +1,42 @@
+@import '../scss-Export.scss';
+.title {
+    display: flex;
+    justify-content: start;
+    height: 2rem;
+    align-items: center;
+    .filled {
+        
+        font-size: 1.5rem;
+        filter: drop-shadow( 0 0 4px  $accent-color);
+        &.like {
+            color: $accent-color;
+        }
+        &.dark_like {
+            color:black;
+        }
+    }
+    
+    .title_text {
+        font-size: 1.2rem;
+        color: $white;
+        margin-left: 0.5rem;
+    }
+}
+.empty {
+    max-width: 15rem;
+    position: relative;
+    left: calc(50% - 7.5rem);
+    margin: 1rem 0 0 0;
+    
+}
+
+.user_profile_title {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.7rem;
+    // padding-left: 1rem;
+    text-align: center;
+    color: $white;
+    filter: drop-shadow(0 0 1px $accent-color-blue);
+
+}

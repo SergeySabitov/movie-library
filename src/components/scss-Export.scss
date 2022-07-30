@@ -1,0 +1,32 @@
+$accent-color: #CB2D6F;
+$dark: #0F292F;
+$dark-violet: #501F3A;
+$accent-color-blue: #14A098;
+$white: #cccccc;
+
+@mixin zeroPadMar() {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin aStyle() {
+    text-decoration: none;
+}
+
+@mixin ulliStyle() {
+    list-style: none;
+}
+
+@mixin shadowBottomLine() {
+    box-shadow: 0 4px 2px -2px $accent-color-blue;
+}
+
+@mixin modal_back() {
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 20;
+        background-color: rgba(0, 0, 0, 0.627);
+}

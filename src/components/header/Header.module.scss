@@ -1,0 +1,115 @@
+@import '.././scss-Export.scss';
+
+$fontSize: 1.2rem;
+
+
+
+.header {
+    position:relative;
+
+
+    .header__container {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+    
+        background-color: $dark;
+        width: 100%;
+        text-transform: uppercase;
+        box-shadow: 0 5px 10px $dark-violet;  
+
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    
+        .list {
+            @include zeroPadMar();
+            list-style: none;
+            color: $white;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            font-size: $fontSize;
+            li {
+                // position: relative;
+                a {
+                    text-decoration: underline;
+                    color: $white;
+                    
+                    &:active {
+                        color: rgb(147, 147, 147)
+                        
+                    }
+                    
+                }
+                .menuIcon {
+                    position:relative;
+                    font-size:$fontSize;
+                    color: $accent-color;
+                    top: calc(50% - $fontSize / 2);
+                    margin-left: 1rem;
+                }
+                img {
+                    background-color: transparent;
+                    position: relative;
+                    height: $fontSize;
+                    top: calc(50% - 0.6rem);
+                    
+                }
+            }
+            
+        }
+    
+        
+    }
+    .menuContainer {
+        
+        z-index: 10;
+        position: fixed;
+        top: 3rem;
+        right: 0;
+
+        &.show {
+            animation: slide-left 300ms ease-out forwards;
+        }
+        &.hide {
+            animation: slide-right 300ms ease-in forwards;
+            pointer-events: none;
+        }
+    }
+    
+}
+@keyframes slide-left {
+    0% {
+        height: 1rem;
+        opacity: 0;
+    }
+    100% {
+        height: auto;
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        height: auto;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+        
+    }
+}
+
+@media (min-width: 961px) {
+    .list {
+        li {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}

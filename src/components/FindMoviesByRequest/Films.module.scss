@@ -1,0 +1,23 @@
+@import '../scss-Export.scss';
+.control_button {
+    @include zeroPadMar();
+    width: 48.5%;
+    margin-left: 1%;
+    margin-top: 0.5rem;
+    text-align: center;
+    height: 1.5rem;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.323);
+    border: 0;
+    span {
+        font-size: 1.5rem;
+    }
+    &:disabled {
+        color: rgba(255, 255, 255, 0.274)
+
+    }
+    &:active {
+        background-color: rgba(0, 0, 0, 0.521); 
+    }
+
+}

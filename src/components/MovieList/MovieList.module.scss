@@ -1,0 +1,73 @@
+@import '../scss-Export.scss';
+
+.not_found {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: $accent-color-blue;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+.list {
+    list-style: none;
+    @include zeroPadMar();
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    li {
+        border: 1px solid transparent;
+    }
+    
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .list li {
+        border-width: 2px;
+        transition: all 0.3s;
+        &:hover {
+            border-color: $white;
+            margin: 0 0.3rem 0 0.3rem;
+        }
+    }
+}
+.title_container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.3rem;
+    @include shadowBottomLine;
+
+    p.title {
+        color: $white;
+        font-size: 1.2rem;
+        @include zeroPadMar();
+        
+        //border-bottom: 1px solid $accent-color-blue;
+        
+    }
+}
+.loading {
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: $white;
+    animation-name: loading;
+    animation-duration: 700ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes loading {
+    0%{
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}

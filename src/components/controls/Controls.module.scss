@@ -1,0 +1,128 @@
+@import '../scss-Export.scss';
+.iconEmpty {
+    filter: drop-shadow( 0 0 2px  $dark-violet);
+}
+.iconFilled {
+    filter: drop-shadow( 0 0 2px  $accent-color-blue);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+
+    .rating {
+        padding-right: 0.5rem;
+    }
+    .hearts {
+        padding-left: 0.5rem;
+        border-left: 1px solid $accent-color-blue;
+        font-size: 2.5rem;
+        .like__empty {
+            color: $accent-color;
+            opacity: 0.8;
+        }
+
+        .dark_like__empty {
+            color: rgba(0, 0, 0, 0.382);
+            opacity: 0.8;
+        }
+
+        .filled {
+            filter: drop-shadow( 0 0 4px  $accent-color);
+            &.like {
+                color: $accent-color;
+                &.animate {
+                    animation: heart_toggle 300ms ease-out 1;
+                }
+            }
+            &.dark_like {
+                color:black;
+                &.animate {
+                    animation: blackLike 1s linear 1; 
+                }
+            }
+        }
+
+    }
+}
+.notific {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: $accent-color-blue;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    
+    a{
+        color: $accent-color;
+        text-decoration: underline;
+        font-size: 1rem;
+        padding-right: 0.3rem;
+    }
+}
+
+@keyframes heart_toggle {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.9);
+        
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes blackLike {
+    0% {
+        opacity: 0;
+        transform: scaleX(-1);
+        filter: drop-shadow(  0 0 0  $accent-color);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scaleX(0);
+        filter: drop-shadow(  0 0 0  $accent-color);
+    }
+    95%{
+        filter: drop-shadow(  0 0 0  $accent-color);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+        filter: drop-shadow(  0 0 4px  $accent-color);
+    }
+}
+
+
+@media (min-width: 961px) { 
+    .controls {
+    .hearts {
+        
+        .like__empty {
+            transition: all 0.3s;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.05);
+                filter: drop-shadow( 0 2px  1px  black);
+            }
+        }
+
+        .dark_like__empty {
+            transition: all 0.3s;
+            &:hover {
+                opacity: 1;
+                color: black;
+                transform: scale(1.05);
+                filter: drop-shadow(0  2px  1px  $accent-color);
+            }
+        }
+    }
+}
+}
+

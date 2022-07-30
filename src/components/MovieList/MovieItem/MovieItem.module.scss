@@ -1,0 +1,39 @@
+.movie_container {
+    // width: 5.6rem;
+    // height: 8.14rem;
+    
+    width: 24vw;
+    height: calc(24vw * 4.36 / 3);
+    background-color: rgba(255, 255, 255, 0.127);
+    overflow: hidden;
+    img {
+        height: 100%;
+        color: rgba(255, 255, 255, 0.507);
+        width: 24vw;
+        
+    }
+}
+
+$destop_width: 10rem;
+@media (min-width: 760px) {
+    .movie_container {
+        
+        width: $destop_width;
+        height: calc($destop_width * 4.36 / 3);
+
+        img {
+            height: 100%;
+            width: $destop_width;
+            
+        }
+    }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .movie_container {
+        transition: all 0.3s;
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
+    }
+
+}

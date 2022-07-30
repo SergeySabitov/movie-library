@@ -1,0 +1,156 @@
+@import '../scss-Export.scss';
+
+.search_toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: $white;
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: $accent-color;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0 0 8px 5px rgb(0 0 0 / 24%);
+    z-index: 20; 
+    opacity: 0.8;
+    &:active {
+        opacity: 1;
+    }
+    &.animate {
+        animation: box_shadow_animation 400ms ease-out 1;
+    }
+    
+}
+.back {
+    @include modal_back();
+    
+}
+
+$max_width: 25rem;
+
+.modal {
+    
+    position: fixed;
+    bottom: 1rem;
+    width: 95%;
+    max-width: $max_width;
+    left: 2.5%;
+    background-color: $dark;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+    animation: slide-up 400ms ease-out 1;
+    border-radius: 15px;
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .inputs {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.3rem;
+            div {
+                margin: 0 1rem 0 1rem;
+
+            }
+            label {
+                display: block;
+                color: $accent-color-blue;
+                
+            }
+            input {
+                transition: all 0.3s;
+                color: $white;
+                font-size: 1rem;
+                background-color: #19434d;;
+                border-radius: 20px;
+                border: 1px solid transparent;
+                width: 100%;
+                text-align: left;
+                
+                padding: 0.25rem;
+                
+                padding-left:0.5rem;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                &:focus {
+                    border-color: #bdbdbd;
+                    outline: 0;
+                    box-shadow: 0 0 3px 3px #cb2d6f49;
+                }
+            }
+      
+        }
+        button {
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            // margin-left: calc(50vw - 3.5rem - 0.5rem);
+            color: $white;
+            background-color: $accent-color;
+            border-radius: 30px;
+            border: 0;
+            box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.273);
+            &:disabled {
+                opacity: 0.65;
+            }
+        }
+    }
+  }
+@media (min-width: 761px) {
+    .modal {
+        left: calc(50% - $max_width / 2);
+        button {
+            transition: all 0.3s;
+            &:disabled {
+                &:hover {
+                    transform: scale(1);
+                    box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.273);
+                }
+            }
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 1px 2px $accent-color-blue;
+            }
+            
+        }
+    }
+}
+  @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .search_toggle {
+        &:hover {
+            opacity: 1;
+            animation: box_shadow_animation 1000ms ease-out infinite;
+        }
+    }
+    
+
+}
+
+@keyframes box_shadow_animation {
+    0% {
+        box-shadow: 0 0 0px 2px #cccccc65; 
+    }
+    50% {
+        box-shadow: 0 0 0 6px #cccccc97;
+    }
+    100% {
+        box-shadow: 0 0 5px 6px #cccccc00;
+    }
+
+}
+
+@keyframes slide-up {
+    from {
+        bottom: -15vh;
+        opacity: 0.3;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+

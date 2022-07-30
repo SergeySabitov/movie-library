@@ -1,0 +1,34 @@
+@import '../../scss-Export.scss';
+.menu {
+    font-size: 1.2rem;
+    @include zeroPadMar();
+    list-style: none;
+    color: $white;
+    background-color: $dark;
+    padding: 0 0.5rem 0 0.5rem;
+    box-shadow: -4px 7px 10px 0px #00000051;
+    li{
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.297);
+        &:last-child {
+            border: 0;
+        }
+        a {
+            color: $white;
+            text-decoration: none;
+            &:active {
+                color: $accent-color;
+            }
+            &:hover {
+                color: white;
+            }
+            
+        }
+        &.logout {
+            cursor: pointer;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
