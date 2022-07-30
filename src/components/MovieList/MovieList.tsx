@@ -17,7 +17,7 @@ const MovieList:React.FC<{movies: movieItemType[], title: string | JSX.Element, 
         setShowDetails({show: false, id: ''});
     }
 
-    let content = <p className={styles.not_found}>Not found</p>;
+    let content = <p className={styles.not_found}>No films yet</p>;
 
     if (props.movies.length > 0) {
         content = <ul className={styles.list}>

@@ -25,7 +25,7 @@ const Welcome: React.FC = () => {
             <span>
             <IonIcon name='heart' className={`${styles.filled} ${styles.like}`} /> <IonIcon name='heart' className={`${styles.filled} ${styles.darl_like}`} />
             </span>
-             <span className={styles.label}>Put hearts (<span className={styles.accent_color}>love</span> heart and <span className={styles.black_color}>guilty pleasure</span> heart)</span>
+             <span className={styles.label}>Put hearts: <div><span className={styles.accent_color}>- love heart</span></div> <div><span className={styles.black_color}>- guilty pleasure heart</span></div></span>
         </div>
         <p className={styles.head_title}>Enjoy!</p>
         </div>
