@@ -2,5 +2,5 @@
 MPA with React Routes.\
 Stack: 
 + Typescript
-+ React
++ React, Redux
 + SCSS, HTML
